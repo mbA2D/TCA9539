@@ -1,6 +1,7 @@
 TCA9539					KEYWORD1
 TCA9539_init			KEYWORD2
-TCA9539_set_direction	KEYWORD2
+TCA9539_set_dir			KEYWORD2
 TCA9539_set_pol_inv		KEYWORD2
 TCA9539_set_pin_val		KEYWORD2
 TCA9539_read_pin_val	KEYWORD2
+TCA9539_check_pin_dir	KEYWORD2
