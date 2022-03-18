@@ -82,9 +82,12 @@ typedef union _TCA9539_register{
 class TCA9539
 {
 	public:
-		TCA9539(uint8_t reset_pin, uint8_t int_pin, uint8_t address); //constructor
+		TCA9539();
+		TCA9539(uint8_t address, TwoWire *i2c = &Wire);
+		TCA9539(uint8_t reset_pin, uint8_t int_pin, uint8_t address, TwoWire *i2c = &Wire); //constructor
 		
 		void TCA9539_init(); //reset with the reset pin
+		void TCA9539_init(uint8_t address, TwoWire *i2c = &Wire);
 		void TCA9539_set_dir(uint8_t pin, TCA9539_pin_dir_t dir);
 		void TCA9539_set_pol_inv(uint8_t pin, TCA9539_pol_inv_t inv);
 		void TCA9539_set_pin_val(uint8_t pin, TCA9539_pin_val_t val);
@@ -102,6 +105,7 @@ class TCA9539
 		uint8_t _addr;
 		uint8_t _reset_pin;
 		uint8_t _int_pin;
+		TwoWire *_i2c;
 		
 		//registers
 		TCA9539_register _input;
