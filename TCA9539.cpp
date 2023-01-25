@@ -58,6 +58,10 @@ void TCA9539::TCA9539_init()
 		delayMicroseconds(1);
 		digitalWrite(_reset_pin, HIGH);
 	}
+	else
+	{
+		//TODO - reset via I2C command
+	}
 	
 	//TODO - attach interrupt for inputs
 	if(_int_pin != 0)
